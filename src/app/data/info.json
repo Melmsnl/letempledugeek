@@ -1,0 +1,30 @@
+{
+  "name": "Le Temple du Geek",
+  "address": {
+    "street": "6, Place Jean Letellier",
+    "postalCode": "14000",
+    "city": "Caen",
+    "country": "France"
+  },
+  "hours": [
+    { "day": "Lundi", "time": "Fermé" },
+    { "day": "Mardi", "time": "13:00 - 19:00" },
+    { "day": "Mercredi", "time": "13:00 - 19:00" },
+    { "day": "Jeudi", "time": "13:00 - 19:00" },
+    { "day": "Vendredi", "time": "13:00 - 19:00" },
+    { "day": "Samedi", "time": "13:00 - 19:00" },
+    { "day": "Dimanche", "time": "14:00 - 18:00" }
+  ],
+  "socials": [
+    { "platform": "Facebook", "url": "https://www.facebook.com/letempledugeekcaen/" },
+    { "platform": "Instagram", "url": "https://www.instagram.com/letempledugeekcaen/" }
+  ],
+  "description": "Salon de thé à la culture japonaise et geek. Pâtisseries japonaises, bubble teas, épicerie asiatique et produits dérivés manga.",
+  "offerings": [
+    "Pâtisseries Japonaises (Mochi, Taiyaki, Dango)",
+    "Bubble Teas & Ramune",
+    "Épicerie Asiatique",
+    "Produits Dérivés Manga",
+    "Jeux de Société (Magic, Yu-gi-Oh, Warhammer)"
+  ]
+}
