@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Bangers } from "next/font/google";
 import "./globals.css";
-import BackgroundSVG from "@/components/BackgroundSVG";
 import SideNavigation from "@/components/SideNavigation";
+import DragonBackground from "@/components/DragonBackground";
 import FloatingIcons from "@/components/FloatingIcons";
+import Banderoles from "@/components/Banderoles";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const bangers = Bangers({
+  weight: "400",
+  variable: "--font-bangers",
   subsets: ["latin"],
 });
 
@@ -22,8 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.variable} antialiased text-foreground min-h-screen relative`}>
-        <BackgroundSVG />
+      <body className={`${inter.variable} ${bangers.variable} antialiased`}>
+        <Banderoles />
+        <DragonBackground />
         <FloatingIcons />
         <SideNavigation />
         <div className="relative z-10">

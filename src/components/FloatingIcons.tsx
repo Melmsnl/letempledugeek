@@ -13,27 +13,34 @@ export default function FloatingIcons() {
 
     if (!mounted) return null;
 
-    // Generate random positions for floating PNG icons
-    const icons = Array.from({ length: 15 }).map((_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        size: 40 + Math.random() * 60, // 40-100px width
-        duration: 20 + Math.random() * 25, // 20-45s animation
-        delay: Math.random() * 5,
-    }));
+    // Generate structured positions for floating PNG icons using a grid with jitter
+    const rows = 3;
+    const cols = 4;
+    const icons = Array.from({ length: rows * cols }).map((_, i) => {
+        const row = Math.floor(i / cols);
+        const col = i % cols;
+        return {
+            id: i,
+            // Grid position + 10% random jitter
+            left: (col * (100 / cols)) + (Math.random() * 10),
+            top: (row * (100 / rows)) + (Math.random() * 10),
+            size: 40 + Math.random() * 40, // Slightly more consistent size
+            duration: 25 + Math.random() * 20, // 25-45s animation
+            delay: Math.random() * 10,
+        };
+    });
 
     return (
-        <div className="fixed inset-0 z-[1] overflow-hidden pointer-events-none opacity-20 mix-blend-multiply">
+        <div className="fixed inset-0 z-[1] overflow-hidden pointer-events-none opacity-40">
             {icons.map((icon) => (
                 <motion.div
                     key={icon.id}
-                    className="absolute drop-shadow-lg"
+                    className="absolute drop-shadow-md"
                     style={{ left: `${icon.left}%`, top: `${icon.top}%` }}
                     animate={{
-                        y: [0, -50, 0, 40, 0],
-                        x: [0, 30, -20, 10, 0],
-                        rotate: [0, 15, -10, 5, 0],
+                        y: [0, -40, 0, 30, 0],
+                        x: [0, 20, -15, 10, 0],
+                        rotate: [0, 10, -5, 5, 0],
                     }}
                     transition={{
                         duration: icon.duration,
@@ -43,11 +50,11 @@ export default function FloatingIcons() {
                     }}
                 >
                     <Image
-                        src="/icon.png"
-                        alt="Manga element"
+                        src="/dragon-logo.png"
+                        alt="Dragon element"
                         width={icon.size}
                         height={icon.size}
-                        className="object-contain"
+                        className="object-contain rounded-full opacity-60"
                     />
                 </motion.div>
             ))}

@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import infoData from "@/app/data/info.json";
-import { IconMapPin, IconClock, IconBrandFacebook, IconBrandInstagram } from "@tabler/icons-react";
+import { IconMapPin, IconClock, IconBrandFacebook, IconBrandInstagram, IconBrandDiscord } from "@tabler/icons-react";
 
 export default function InfoSection() {
     return (
         <section id="infos" className="py-24 px-4 bg-transparent border-t border-primary/20">
             <div className="max-w-5xl mx-auto md:ml-64 xl:mx-auto bg-primary/30 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(251,207,232,0.4)] border border-primary/50">
                 <motion.h2
-                    className="text-4xl font-bold text-center text-foreground mb-16"
+                    className="text-4xl font-bold text-center text-foreground mb-16 font-geek tracking-widest"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -34,6 +34,9 @@ export default function InfoSection() {
                             {infoData.address.street}<br />
                             {infoData.address.postalCode} {infoData.address.city}<br />
                             {infoData.address.country}
+                        </p>
+                        <p className="text-foreground font-geek text-xl mt-2 animate-pulse">
+                            Nous vous attendons
                         </p>
                     </motion.div>
 
@@ -65,24 +68,41 @@ export default function InfoSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                        <div className="bg-primary/20 p-4 rounded-full text-secondary mb-2 flex gap-2">
-                            <IconBrandFacebook size={40} />
-                            <IconBrandInstagram size={40} />
+                        <div className="bg-primary/20 p-4 rounded-full text-secondary mb-2 flex gap-3">
+                            <IconBrandInstagram size={32} />
+                            <IconBrandFacebook size={32} />
+                            <IconBrandDiscord size={32} />
                         </div>
                         <h3 className="text-xl font-bold text-foreground">Réseaux Sociaux</h3>
-                        <p className="text-foreground/90 font-medium mb-4">Suivez nos actualités !</p>
-                        <div className="flex gap-4">
-                            {infoData.socials.map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary/80 transition-colors shadow-md"
-                                >
-                                    {social.platform}
-                                </a>
-                            ))}
+                        <p className="text-foreground/90 font-medium mb-2">Suivez nos actualités !</p>
+                        <div className="flex flex-col gap-3 w-full max-w-[180px]">
+                            {/* Instagram first */}
+                            <a
+                                href={infoData.socials.find(s => s.platform === "Instagram")?.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="bg-[#E4405F] text-white px-4 py-2 rounded-xl font-bold hover:opacity-80 transition-all shadow-md flex items-center justify-center gap-2"
+                            >
+                                <IconBrandInstagram size={20} /> Instagram
+                            </a>
+                            {/* Facebook under Instagram */}
+                            <a
+                                href={infoData.socials.find(s => s.platform === "Facebook")?.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="bg-[#1877F2] text-white px-4 py-2 rounded-xl font-bold hover:opacity-80 transition-all shadow-md flex items-center justify-center gap-2"
+                            >
+                                <IconBrandFacebook size={20} /> Facebook
+                            </a>
+                            {/* Discord alongside/below (added for completeness) */}
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="bg-[#5865F2] text-white px-4 py-2 rounded-xl font-bold hover:opacity-80 transition-all shadow-md flex items-center justify-center gap-2"
+                            >
+                                <IconBrandDiscord size={20} /> Discord
+                            </a>
                         </div>
                     </motion.div>
 

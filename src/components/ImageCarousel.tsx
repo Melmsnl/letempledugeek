@@ -5,10 +5,9 @@ import { useState, useEffect } from "react";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 const images = [
-    "/icon.png", // Using the provided image as the first default image
-    // Add placeholder URLs or more local paths here if desired
-    "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=1969&auto=format&fit=crop"
+    "/temple-geek-1.jpg",
+    "/temple-geek-2.jpg",
+    "/temple-geek-3.jpg"
 ];
 
 export default function ImageCarousel() {
@@ -32,14 +31,14 @@ export default function ImageCarousel() {
 
     return (
         <section className="py-24 px-4 bg-transparent" id="gallery">
-            <div className="max-w-5xl mx-auto md:ml-64 xl:mx-auto bg-primary/20 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(251,207,232,0.3)] border border-primary/50">
+            <div className="max-w-5xl mx-auto bg-primary/20 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(251,207,232,0.3)] border border-primary/50">
                 <motion.div
                     className="text-center mb-12"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-4xl font-bold text-foreground mb-4">Notre Espace</h2>
+                    <h2 className="text-4xl font-bold text-foreground mb-4">Notre salon et notre équipe</h2>
                     <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
                 </motion.div>
 

@@ -14,7 +14,7 @@ export default function BackgroundSVG() {
                 <motion.path
                     d="M0,400 C320,500 420,200 720,300 C1020,400 1120,100 1440,200 L1440,800 L0,800 Z"
                     fill="none"
-                    stroke="#ddd6fe" // violet-200
+                    stroke="#fbcfe8" // pink-200
                     strokeWidth="4"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.8 }}
@@ -24,7 +24,7 @@ export default function BackgroundSVG() {
                 <motion.path
                     d="M0,500 C250,700 550,250 900,450 C1250,650 1350,300 1440,400 L1440,800 L0,800 Z"
                     fill="none"
-                    stroke="#ede9fe" // violet-100
+                    stroke="#fce7f3" // pink-100
                     strokeWidth="6"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.6 }}
